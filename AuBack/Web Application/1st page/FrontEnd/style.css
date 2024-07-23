@@ -1,0 +1,328 @@
+body {
+    background-color: rgb(26, 26, 26);
+    margin: 0;
+    padding: 0;
+    background-position: center;
+}
+
+.background-image{
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
+
+/* invisible button */
+.invisible-circular-button {
+    position: absolute;
+    top: 7%;
+    left: 4.9%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
+/* upload file option button */
+.Documents-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 45px;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: rgb(49, 49, 83);
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.folderContainer {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+.text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+.Documents-btn:hover {
+  background-color: rgb(58, 58, 94);
+}
+.Documents-btn:active {
+  transform: scale(0.95);
+}
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
+}
+
+
+
+/* type file manually button */
+.Tbutton {
+  background-color: rgb(58, 58, 94);
+  color: #fff;
+  width: 10em;
+  height: 3.6em;
+  border: rgb(60, 60, 119) 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+.Tbutton:hover {
+  background-color: rgb(60, 60, 119);
+  cursor: pointer;
+}
+.Tbutton svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  /* left: -5%; */
+  display: flex;
+  transition: all 0.6s ease;
+}
+.Tbutton:hover svg {
+  transform: translateX(5px);
+}
+.text {
+  margin: 0 1.5em
+}
+
+
+
+
+/* square box in the middle */
+.square-box {
+    position: absolute;
+    width: 500px;
+    height: 710px;
+    top: 14.5%;
+    left: 38%;
+    background-color: rgb(31, 31, 31);
+    border: 2px solid black;
+}
+
+
+
+/*Upload file here button*/
+.Ubutton {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: rgb(38, 38, 75);
+    --bg-color: rgb(52, 52, 147);
+    --main-color: #dedede;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    top: 50%;
+    left: 47%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .Ubutton, .Ubutton__icon, .Ubutton__text {
+    transition: all 0.3s;
+  }
+  .Ubutton .Ubutton__text {
+    transform: translateX(25px);
+    color: var(--font-color);
+    font-weight: 600;
+  }
+  .Ubutton .Ubutton__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;    
+    left: 1%;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Ubutton .svg {
+    width: 20px;
+    stroke: var(--main-color);
+  }
+  .Ubutton:hover {
+    background: var(--bg-color);
+  }
+  .Ubutton:hover .Ubutton__text {
+    color: transparent;
+  }
+  .Ubutton:hover .Ubutton__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  .Ubutton:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+  }
+
+
+
+
+/* type here box */
+  .input {
+    position: absolute;
+    top: 50%;
+    left: 45.3%;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    
+    transition: 0.3s;
+   }
+   .input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px rgb(79, 79, 156),
+       -20px -20px 60px rgb(79, 79, 156);
+    transition: 0.3s;
+   }
+
+
+
+/* <!-------------------Used to maintain the functionality of the upload file and enter manually ------------------------> */
+/* used to arrange them in rows */
+.type_titles{
+    position: absolute;
+    top: 23%;
+    left: 41.3%;
+    display: flex;
+    margin: 20px 0 40px;
+}
+/* used to maintain gap between them*/
+.tab-links{
+    margin-right: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+/* underline under upload files and type id manually */
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(115, 115, 142);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width:100%;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+.type_of_downlaod{
+    margin: 90px;
+    padding: 100px;
+    color:#c6c6c6
+}
+
+
+
+
+/* button for submit  */
+.btn {
+  position: absolute;
+  top: 68%;
+  left: 47.7%;
+  outline: 0;
+  border: 1px solid transparent;
+  background-color: rgb(60, 60, 119);
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(60, 60, 119), 0 2px 4px -1px rgb(60, 60, 119);
+}
+.btn span {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all .4s ease;
+}
+button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.btn span:nth-child(2),.btn span:nth-child(3) {
+  position: absolute;
+  top: 40px;
+  color: #fff;
+}
+.btn span:nth-child(2) {
+  background-color: rgb(60, 60, 119);
+}
+.btn span:nth-child(3) {
+  background-color: rgb(60, 60, 119);
+}
+.btn:hover {
+  box-shadow: 0 10px 15px -3px rgb(60, 60, 119), 0 4px 6px -2px rgb(60, 60, 119);
+}
+.btn:hover span:nth-child(2), .btn:focus span:nth-child(3) {
+  top: 0;
+}
+.btn:focus {
+  box-shadow: none;
+}
