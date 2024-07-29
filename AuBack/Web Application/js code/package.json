@@ -1,0 +1,12 @@
+{
+    "name": "google_drive_api",
+    "version": "1.0.0",
+    "description": "application to demonstrate how to upload to google",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Priyanshu Sharma <priyanshusharma42v@gmail.com>",
+    "license": "ISC",
+    "keywords": []
+}
