@@ -31,7 +31,7 @@
         <div class="card">
             <input accept="image/png, image/jpeg" name="avatar" type="file">
             <main>
-                <a href="/profile" >
+                <a href="/login" >
                     <svg xml:space="preserve" style="enable-background:new 0 0 129.5 129.5;" viewBox="0 0 129.5 129.5" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Camada_1" version="1.1">
                         <style type="text/css">
                             .st0 {
@@ -165,15 +165,31 @@
         <div class="tab-contents active-tab" id="Upload-file">
             <ul>
 <!-------------------------button to upload file------------------------->
-                    <button type="button" class="Ubutton">
-                        <span class="Ubutton__text">Upload file</span>
-                        <span class="Ubutton__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
-                                <line y2="19" y1="5" x2="12" x1="12"></line>
-                                <line y2="12" y1="12" x2="19" x1="5"></line>
-                            </svg>
-                        </span>
-                    </button>
+                <style>
+                    .Ubutton__text
+                    {
+                        margin-right: 8px;
+                    }
+                    .Ubutton__icon
+                    {
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                    .file-input
+                    {
+                        display: none;
+                    }
+                </style>
+                <button type="button" class="Ubutton" onclick="document.getElementById('fileInput').click()">
+                    <span class="Ubutton__text">Upload file</span>
+                    <span class="Ubutton__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
+                            <line y2="19" y1="5" x2="12" x1="12"></line>
+                            <line y2="12" y1="12" x2="19" x1="5"></line>
+                        </svg>
+                    </span>
+                </button>
+                <input type="file" id="fileInput" class="file-input" accept=".txt" onchange="handleFileUpload(event)">
             </ul>
         </div>
         <div class="tab-contents" id="ID">
@@ -197,6 +213,7 @@
                 </g>
             </svg>
         </span>
+        
         <span>
             Sure ?
         </span>
@@ -209,7 +226,6 @@
 
 
 
-    
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -242,10 +258,23 @@
         function type_here_content(){
             var type_here= document.getElementById("type_here").value;
             console.log(type_here);
+            fetch("/upload");
         }
 
+        
 
 
+        //function to take txt file as input
+        function handleFileUpload(event)
+            {
+                const file = event.target.files[0];
+                if (file)
+                {
+                    // Handle the file upload here
+                    console.log('File uploaded:', file.name);
+                    // Add further file handling logic here
+                }
+            }
 
     </script>
 </body>
