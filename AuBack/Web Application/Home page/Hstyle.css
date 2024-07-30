@@ -14,7 +14,7 @@ body {
 
 
 
-/* for the conatiner */
+/*blank box for the conatiner */
 .form{
   display: flex;
   height: 50vh;
