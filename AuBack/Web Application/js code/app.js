@@ -144,19 +144,24 @@ async function running(){
     uploadFile();
 
 
-    // time interval
-    var hu=1;
-    var interval= setInterval(()=>{
-        deleteFile();
-        hu=hu+1;
-        if(hu=2)
-            clearInterval(interval);
-    },15000)
+    // // time interval
+    // var hu=1;
+    // var interval= setInterval(()=>{
+    //     deleteFile();
+    //     hu=hu+1;
+    //     if(hu=2)
+    //         clearInterval(interval);
+    // },15000)
     
     
     
     
 }
-running()
+//running()
 //generatePublicUrl();
 //storeFilePath();
+
+// src/moduleA.js
+// const message = "lund lele";
+//             module.exports = { message };
+
