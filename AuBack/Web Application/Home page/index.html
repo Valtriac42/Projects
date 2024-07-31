@@ -72,7 +72,7 @@
 
 
     <!------------------blank box ------------------------->
-        <form class="form">            
+        <form class="Box_form">            
         </form>
 
 
@@ -226,10 +226,37 @@
 
 
 
+        <div class="three-body" id="loading">
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+            <div class="three-body__dot"></div>
+        </div> 
+    
+
+    <button class="RButton" id="loadButton">
+        Auto Check
+    </button>
+
+
+
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
         
+
+        document.getElementById('loadButton').addEventListener('click', function()
+        {
+            // Show the loading animation
+            document.getElementById('loading').style.display = 'inline-block';
+    
+            // Simulate a server response after 3 seconds
+            setTimeout(function()
+            {
+                // Hide the loading animation
+                document.getElementById('loading').style.display = 'none';
+            }, 3000);
+        });
+
 
         // to load Default txt below the profile logo
         let defaultName = "Default";
