@@ -15,9 +15,9 @@ body {
 
 
 /*blank box for the conatiner */
-.form{
+.Box_form{
   display: flex;
-  height: 50vh;
+  height: 58vh;
   top: 33%;
   left: 60%;
   width: 35vh;
@@ -461,3 +461,143 @@ button svg {
   transition: all 0.2s ease-in-out 0s;
   padding-bottom: 1rem;
 }
+
+
+
+
+
+/* Hide the loading animation by default */
+#loading {
+  display: none;
+}
+
+/* Loading animation styles */
+.three-body {
+top: 36vh;
+left: 123vh;
+--uib-size: 35px;
+--uib-speed: 0.8s;
+--uib-color: #2971ff;
+position: relative;
+display: inline-block;
+height: var(--uib-size);
+width: var(--uib-size);
+animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+}
+.three-body__dot {
+position: absolute;
+height: 100%;
+width: 30%;
+}
+.three-body__dot:after {
+content: '';
+position: absolute;
+height: 0%;
+width: 100%;
+padding-bottom: 100%;
+background-color: var(--uib-color);
+border-radius: 50%;
+}
+.three-body__dot:nth-child(1) {
+bottom: 5%;
+left: 0;
+transform: rotate(60deg);
+transform-origin: 50% 85%;
+}
+.three-body__dot:nth-child(1)::after {
+bottom: 0;
+left: 0;
+animation: wobble1 var(--uib-speed) infinite ease-in-out;
+animation-delay: calc(var(--uib-speed) * -0.3);
+}
+.three-body__dot:nth-child(2) {
+bottom: 5%;
+right: 0;
+transform: rotate(-60deg);
+transform-origin: 50% 85%;
+}
+.three-body__dot:nth-child(2)::after {
+bottom: 0;
+left: 0;
+animation: wobble1 var(--uib-speed) infinite
+   calc(var(--uib-speed) * -0.15) ease-in-out;
+}
+.three-body__dot:nth-child(3) {
+bottom: -5%;
+left: 0;
+transform: translateX(116.666%);
+}
+.three-body__dot:nth-child(3)::after {
+top: 0;
+left: 0;
+animation: wobble2 var(--uib-speed) infinite ease-in-out;
+}
+@keyframes spin78236 {
+0% {
+ transform: rotate(0deg);
+}
+100% {
+ transform: rotate(360deg);
+}
+}
+@keyframes wobble1 {
+0%,
+ 100% {
+ transform: translateY(0%) scale(1);
+ opacity: 1;
+}
+50% {
+ transform: translateY(-66%) scale(0.65);
+ opacity: 0.8;
+}
+}
+@keyframes wobble2 {
+0%,
+ 100% {
+ transform: translateY(0%) scale(1);
+ opacity: 1;
+}
+50% {
+ transform: translateY(66%) scale(0.65);
+ opacity: 0.8;
+}
+}
+
+/* Button styles */
+.RButton {
+position: absolute;
+top: 80vh;
+left: 128vh;
+--clr-font-main: hsla(0 0% 20% / 100);
+--btn-bg-1: rgb(15, 64, 162);
+--btn-bg-2: rgb(7, 37, 86);
+--btn-bg-color: hsla(360 100% 100% / 1);
+--radii: 0.5em;
+cursor: pointer;
+padding: 0.9em 1.4em;
+min-width: 120px;
+min-height: 44px;
+font-size: var(--size, 1rem);
+font-family: "Segoe UI", system-ui, sans-serif;
+font-weight: 500;
+transition: 0.8s;
+background-size: 280% auto;
+background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+border: none;
+border-radius: var(--radii);
+color: var(--btn-bg-color);
+/* box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35); */
+}
+.RButton:hover {
+background-position: right top;
+}
+.RButton:is(:focus, :focus-visible, :active) {
+outline: none;
+box-shadow: 0 0 0 1px var(--btn-bg-color), 0 0 0 3px var(--btn-bg-2);
+}
+@media (prefers-reduced-motion: reduce) {
+.RButton {
+  transition: linear;
+}
+}
+
